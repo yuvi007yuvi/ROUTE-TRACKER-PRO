@@ -46,7 +46,7 @@ export default function RunningSession() {
     };
 
     const handleSubmit = async () => {
-        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+        const apiUrl = import.meta.env.VITE_API_URL || '/api';
         await axios.post(`${apiUrl}/runs/end`, {
             run_id: runId,
             end_time: new Date().toISOString(),

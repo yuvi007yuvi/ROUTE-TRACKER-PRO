@@ -33,7 +33,7 @@ export default function RouteMap() {
         const user = JSON.parse(localStorage.getItem('user') || '{}');
         try {
             // In a real app, use the API URL from env, but for now we might mock or assume localhost if not set
-            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+            const apiUrl = import.meta.env.VITE_API_URL || '/api';
             const res = await axios.post(`${apiUrl}/runs/start`, {
                 route_id: id,
                 user_id: user.id,

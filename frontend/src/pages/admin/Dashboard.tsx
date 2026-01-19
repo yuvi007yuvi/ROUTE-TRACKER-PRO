@@ -90,7 +90,7 @@ function RoutesManager() {
                         const zone = formData.get('zone');
                         if (zone) data.append('zone', zone as string);
 
-                        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+                        const apiUrl = import.meta.env.VITE_API_URL || '/api';
                         try {
                             await axios.post(`${apiUrl}/routes/upload`, data);
                             alert('Route Uploaded');
@@ -154,7 +154,7 @@ function UsersManager() {
     };
 
     const handleUpdate = async (id: string, field: string, value: string) => {
-        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+        const apiUrl = import.meta.env.VITE_API_URL || '/api';
         await axios.put(`${apiUrl}/users/${id}`, { [field]: value });
         fetchUsers();
     };
@@ -168,7 +168,7 @@ function UsersManager() {
                 <form onSubmit={async (e) => {
                     e.preventDefault();
                     const formData = new FormData(e.currentTarget);
-                    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+                    const apiUrl = import.meta.env.VITE_API_URL || '/api';
                     try {
                         await axios.post(`${apiUrl}/users`, {
                             name: formData.get('name'),
@@ -268,7 +268,7 @@ function AssignmentsManager() {
 
     const handleAssign = async () => {
         if (!selectedUser || !selectedRoute) return alert('Select user and route');
-        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+        const apiUrl = import.meta.env.VITE_API_URL || '/api';
         try {
             await axios.post(`${apiUrl}/assignments`, {
                 user_id: selectedUser,
