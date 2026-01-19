@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>W16R6_0779 WARD 33 VEHICLE WORK IN WARD 16 .kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>4</width>
+		</LineStyle>
+	</Style>
+	<Folder>
+		<name>W16R6_0779 WARD 33 VEHICLE WORK IN WARD 16 </name>
+		<open>1</open>
+		<Placemark>
+			<name>W16R6_0779 WARD 33 VEHICLE WORK IN WARD 16 </name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					77.64999135942276,27.49262058396785,0 77.64901993457103,27.49243478742597,0 77.64708515357688,27.49319261032475,0 77.64670322017959,27.49238172459502,0 77.64853316753891,27.49151862010266,0 77.64886351745359,27.49215388824682,0 77.64853033599714,27.4915125737605,0 77.64869643917862,27.49144249912914,0 77.6483629391885,27.49093432045354,0 77.64869536499631,27.49143172681497,0 77.64901409088316,27.49129651135708,0 77.64871532853748,27.49082903282275,0 77.64899729143883,27.4906967082786,0 77.64929932149319,27.49112086145455,0 77.64901111437101,27.4907080725181,0 77.65003706685799,27.4902489938399,0 77.65031333423772,27.49068605502124,0 77.64929263795636,27.49112341843819,0 77.64964011400693,27.4909841469792,0 77.65000616835715,27.49157916477892,0 77.64993483025421,27.49177363042695,0 77.64999796182366,27.49157560577122,0 77.64963568828094,27.49098425786813,0 77.65031861794951,27.49068490856339,0 77.65003554478784,27.4902443678195,0 77.65092593844278,27.48972345280752,0 77.64985293814567,27.48927272647216,0 77.64916314494621,27.49039883519179,0 77.64833785071735,27.49090796124792,0 77.6491648968142,27.49040908473888,0 77.64833611181338,27.49090555037582,0 77.64835945608439,27.49094305118282,0 77.64658479568688,27.49188300467807,0 77.64836248718174,27.49095640632665,0 77.64834222847979,27.4908933045903,0 77.6491669312732,27.49039863726716,0 77.64985749311674,27.48926705103789,0 77.65093797605888,27.48972953479538,0 77.65175385825613,27.49014465450664,0 77.65460450610608,27.49156860640448,0 77.65453901275804,27.49175910784338,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<atom:link rel="app" href="https://www.google.com/earth/about/versions/#earth-pro" title="Google Earth Pro 7.3.6.10441"></atom:link>
+	</Folder>
+</Document>
+</kml>

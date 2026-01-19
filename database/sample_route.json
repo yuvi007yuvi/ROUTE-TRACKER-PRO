@@ -1,0 +1,27 @@
+{
+    "type": "Feature",
+    "properties": {
+        "name": "Sample Route 1"
+    },
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                77.2090,
+                28.6139
+            ],
+            [
+                77.2100,
+                28.6140
+            ],
+            [
+                77.2110,
+                28.6142
+            ],
+            [
+                77.2120,
+                28.6145
+            ]
+        ]
+    }
+}
