@@ -1,0 +1,16 @@
+{
+  "name": "route-tracker-pro",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "install-all": "npm install"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
