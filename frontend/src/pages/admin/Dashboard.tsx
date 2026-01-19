@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '../../lib/supabase';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function AdminDashboard() {
+    const navigate = useNavigate();
     const [tab, setTab] = useState('dashboard'); // dashboard, routes, assignments, runs
     const [stats, setStats] = useState({ routes: 0, users: 0, runs: 0 });
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
 
     useEffect(() => {
         // Mock stats or fetch
@@ -20,15 +23,35 @@ export default function AdminDashboard() {
     return (
         <div className="flex h-screen bg-gray-100">
             {/* Sidebar */}
-            <div className="w-64 bg-slate-900 text-white p-4">
+            <div className="w-64 bg-slate-900 text-white p-4 flex flex-col">
                 <h1 className="text-xl font-bold mb-8">Admin Portal</h1>
-                <nav className="space-y-2">
-                    <button onClick={() => setTab('dashboard')} className={`block w-full text-left p-2 rounded ${tab === 'dashboard' ? 'bg-slate-700' : ''}`}>Dashboard</button>
-                    <button onClick={() => setTab('routes')} className={`block w-full text-left p-2 rounded ${tab === 'routes' ? 'bg-slate-700' : ''}`}>Routes</button>
-                    <button onClick={() => setTab('users')} className={`block w-full text-left p-2 rounded ${tab === 'users' ? 'bg-slate-700' : ''}`}>Users</button>
-                    <button onClick={() => setTab('assignments')} className={`block w-full text-left p-2 rounded ${tab === 'assignments' ? 'bg-slate-700' : ''}`}>Assignments</button>
-                    <button onClick={() => setTab('runs')} className={`block w-full text-left p-2 rounded ${tab === 'runs' ? 'bg-slate-700' : ''}`}>Route Runs</button>
+
+                {/* User Info */}
+                <div className="mb-6 p-4 bg-slate-800 rounded-lg border border-slate-700">
+                    <div className="text-xs text-slate-400 uppercase font-semibold">Logged in as</div>
+                    <div className="font-bold text-lg truncate" title={user.name}>{user.name || 'Admin User'}</div>
+                    <div className="text-xs text-slate-500 font-mono">ID: {user.id || 'N/A'}</div>
+                </div>
+
+                <nav className="space-y-2 flex-1">
+                    <button onClick={() => setTab('dashboard')} className={`block w-full text-left p-3 rounded transition-colors ${tab === 'dashboard' ? 'bg-blue-600 font-semibold' : 'hover:bg-slate-800'}`}>Dashboard</button>
+                    <button onClick={() => setTab('routes')} className={`block w-full text-left p-3 rounded transition-colors ${tab === 'routes' ? 'bg-blue-600 font-semibold' : 'hover:bg-slate-800'}`}>Routes</button>
+                    <button onClick={() => setTab('users')} className={`block w-full text-left p-3 rounded transition-colors ${tab === 'users' ? 'bg-blue-600 font-semibold' : 'hover:bg-slate-800'}`}>Users</button>
+                    <button onClick={() => setTab('assignments')} className={`block w-full text-left p-3 rounded transition-colors ${tab === 'assignments' ? 'bg-blue-600 font-semibold' : 'hover:bg-slate-800'}`}>Assignments</button>
+                    <button onClick={() => setTab('runs')} className={`block w-full text-left p-3 rounded transition-colors ${tab === 'runs' ? 'bg-blue-600 font-semibold' : 'hover:bg-slate-800'}`}>Route Runs</button>
                 </nav>
+
+                <button
+                    onClick={() => {
+                        if (confirm('Are you sure you want to logout?')) {
+                            localStorage.removeItem('user');
+                            navigate('/login');
+                        }
+                    }}
+                    className="mt-4 w-full bg-red-600/10 text-red-400 hover:bg-red-600 hover:text-white p-3 rounded transition-all font-semibold flex items-center justify-center gap-2"
+                >
+                    Logout
+                </button>
             </div>
 
             {/* Main Content */}
